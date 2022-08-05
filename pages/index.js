@@ -34,10 +34,10 @@ export default function Home() {
           Conference
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 ">
+      <div className="flex flex-col items-center">
         {/* left */}
 
-        <div className="order-last md:order-first">
+        <div className="order-last md:order-first place-self-start">
           <div>
             <Image
               className="rounded-[20px]"
@@ -62,7 +62,7 @@ export default function Home() {
         {/* right */}
 
         <div>
-          <div>
+          <div className="relative">
             <Image
               className="rounded-[35px]"
               src="/hero2.jpg"
@@ -70,6 +70,16 @@ export default function Home() {
               width={327}
               height={333}
             />
+
+            <div className="absolute right-[-4%] bottom-[-15%]">
+              <Image
+                className="rotate-[-23deg]"
+                src="/star.png"
+                alt="me"
+                width={94}
+                height={94}
+              />
+            </div>
           </div>
         </div>
       </div>
