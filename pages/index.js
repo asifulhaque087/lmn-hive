@@ -4,7 +4,71 @@ import styles from "../styles/Home.module.css";
 import { gql } from "@apollo/client";
 import client from "../graphql/client";
 
-export default function Home() {
+const dateToday = (datt) => {
+  var days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  var d = new Date(datt);
+  // var dayName = days[d.getDay()];
+  // return dayName;
+  return d.getDay();
+};
+
+export default function Home({ conferences }) {
+  // console.log("fist list ", conferences);
+
+  let newD = {};
+
+  for (let con of conferences.conferences) {
+    if (
+      con &&
+      con.schedules[0] &&
+      con.schedules[0].intervals[0] &&
+      con.schedules[0].intervals[0] &&
+      con.schedules[0].intervals[0].begin
+    ) {
+      newD[con.schedules[0].intervals[0].begin] = [{}, {}, {}, {}, {}, {}, {}];
+      newD[con.schedules[0].intervals[0].begin][dateToday(con.startDate)] = con;
+      console.log(newD[con.schedules[0].intervals[0].begin]);
+    }
+  }
+  // console.log(newD);
+
+  // conferences.conferences.sort((a, b) =>
+  //   a.schedules.intervals.begin > b.schedules.intervals.begin
+  //     ? 1
+  //     : b.schedules.intervals.begin > a.schedules.intervals.begin
+  //     ? -1
+  //     : 0
+  // );
+
+  // let srtedArr = [...conferences.conferences].sort(
+  //   (a, b) =>
+  //     a.schedules.intervals &&
+  //     b.schedules.intervals &&
+  //     a.schedules.intervals > b.schedules.intervals
+  //       ? 1
+  //       : b.schedules.intervals > a.schedules.intervals
+  //       ? -1
+  //       : 0
+
+  // a.schedules.intervals.begin[0] > b.schedules.intervals.begin[0]
+  //   ? 1
+  //   : b.schedules.intervals.begin[0] > a.schedules.intervals.begin[0]
+  //   ? -1
+  //   : 0
+  // );
+
+  // console.log("srted list ", srtedArr);
+
+  // console.log("sorted list ", conferences.conferences);
+
   return (
     <>
       <div className="l-g"></div>
@@ -79,6 +143,41 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* Table */}
+      <table>
+        <tbody>
+          <tr>
+            {/* "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday", */}
+
+            {/* <th className="invisible">Mon</th> */}
+            <th>Time</th>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+
+          {Object.entries(newD).map(([key, value]) => {
+            return (
+              <tr>
+                <td>{key}</td>
+                {value.map((con) => (
+                  <td>{con.name}</td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </>
   );
 }
@@ -86,19 +185,28 @@ export default function Home() {
 export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
-      query Countries {
-        countries {
-          code
+      query Conferences {
+        conferences {
           name
-          emoji
+          startDate
+          endDate
+          schedules {
+            day
+            intervals {
+              begin
+              end
+            }
+          }
         }
       }
     `,
   });
 
+  // var sortedObjs = _.sortBy( data.conferences, 'intervals' );
+
   return {
     props: {
-      countries: data.countries.slice(0, 4),
+      conferences: data,
     },
   };
 }
