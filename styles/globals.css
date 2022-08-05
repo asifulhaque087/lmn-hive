@@ -12,28 +12,26 @@ body {
 }
 
 .l-g {
-  position: absolute;
+  position: fixed;
   width: 30rem;
   height: 30rem;
   border-radius: 50%;
   background: #7C3EFF;
   opacity: 0.3;
   filter: blur(212px);
-  z-index: -9;
   top: -11rem;
   left: -11rem;
   filter: blur(75px);
 }
 
 .r-g {
-  position: absolute;
+  position: fixed;
   width: 30rem;
   height: 30rem;
   border-radius: 50%;
   background: #BE229C;
   opacity: 0.3;
   filter: blur(212px);
-  z-index: -9;
   top: -11rem;
   right: -11rem;
   filter: blur(75px);
