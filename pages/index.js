@@ -1,9 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-  <div className='text-yellow-700'>hello</div>
-  )
+    <>
+      <div className="l-g"></div>
+      <div className="r-g"></div>
+    </>
+  );
 }
