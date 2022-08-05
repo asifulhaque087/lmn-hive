@@ -7,8 +7,34 @@ export default function Home() {
     <>
       <div className="l-g"></div>
       <div className="r-g"></div>
+      {/* navigation section */}
+      <div className="flex items-center">
+        {/* left */}
+        <div>
+          <h1 className="text-[20px] font-normal">
+            Rea<span className="text-main-yellow">c</span>t
+          </h1>
+        </div>
+        <div className="ml-auto">
+          <Image
+            className="rounded-[20px]"
+            src="/hamburger.png"
+            alt="me"
+            width={24}
+            height={24}
+          />
+        </div>
+        {/* right */}
+      </div>
       {/* hero section */}
-      <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="px-5">
+        <h1 className="text-[48px] text-[#0A142F] font-bold text-right leading-[58px]">
+          React
+          <br />
+          Conference
+        </h1>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 ">
         {/* left */}
 
         <div className="order-last md:order-first">
