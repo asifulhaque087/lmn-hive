@@ -1,9 +1,12 @@
-const Layout = ({children}) => {
+import { Navigation } from "../components/Navigation";
+
+const Layout = ({ children }) => {
   return (
     <div>
-        {children}
+      <Navigation />
+      <div>{children}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

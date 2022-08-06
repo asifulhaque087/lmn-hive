@@ -45,25 +45,6 @@ export default function Home({ conferences }) {
       <div className="l-g"></div>
       <div className="r-g"></div>
 
-      {/* navigation section */}
-      <div className="flex items-center">
-        {/* left */}
-        <div>
-          <h1 className="text-[20px] font-normal">
-            Rea<span className="text-main-yellow">c</span>t
-          </h1>
-        </div>
-        <div className="ml-auto">
-          <Image
-            className="rounded-[20px]"
-            src="/hamburger.png"
-            alt="me"
-            width={24}
-            height={24}
-          />
-        </div>
-        {/* right */}
-      </div>
 
       <div className="grid place-items-center px-[10%] mt-[20%]">
         <div className="flex flex-col items-start md:flex-row gap-8 md:items-center">
