@@ -40,6 +40,7 @@ export default function Home({ conferences }) {
     }
   }
 
+
   return (
     <>
       <div className="l-g"></div>
@@ -107,7 +108,7 @@ export default function Home({ conferences }) {
         </div>
       </div>
       {/* Table */}
-      {/* <table>
+      <table>
         <tbody>
           <tr>
             <th>Time</th>
@@ -154,7 +155,7 @@ export default function Home({ conferences }) {
             );
           })}
         </tbody>
-      </table> */}
+      </table>
     </>
   );
 }
