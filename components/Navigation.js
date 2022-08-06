@@ -1,10 +1,13 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export const Navigation = () => {
+  const router = useRouter();
+
   return (
     <div className="px-[10%] flex items-center">
       {/* left */}
-      <div className="mb-2">
+      <div className="mb-2 cursor-pointer" onClick={() => router.push(`/`)}>
         <h1 className="text-[40px] font-bold">
           Rea<span className="text-main-yellow">c</span>t
         </h1>
