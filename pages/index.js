@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { gql } from "@apollo/client";
 import client from "../graphql/client";
+import { useRouter } from "next/router";
 
 const dateToday = (datt) => {
   var days = [
@@ -22,6 +23,7 @@ const dateToday = (datt) => {
 
 export default function Home({ conferences }) {
   // console.log("fist list ", conferences);
+  const router = useRouter();
 
   let newD = {};
 
@@ -35,39 +37,8 @@ export default function Home({ conferences }) {
     ) {
       newD[con.schedules[0].intervals[0].begin] = [{}, {}, {}, {}, {}, {}, {}];
       newD[con.schedules[0].intervals[0].begin][dateToday(con.startDate)] = con;
-      console.log(newD[con.schedules[0].intervals[0].begin]);
     }
   }
-  // console.log(newD);
-
-  // conferences.conferences.sort((a, b) =>
-  //   a.schedules.intervals.begin > b.schedules.intervals.begin
-  //     ? 1
-  //     : b.schedules.intervals.begin > a.schedules.intervals.begin
-  //     ? -1
-  //     : 0
-  // );
-
-  // let srtedArr = [...conferences.conferences].sort(
-  //   (a, b) =>
-  //     a.schedules.intervals &&
-  //     b.schedules.intervals &&
-  //     a.schedules.intervals > b.schedules.intervals
-  //       ? 1
-  //       : b.schedules.intervals > a.schedules.intervals
-  //       ? -1
-  //       : 0
-
-  // a.schedules.intervals.begin[0] > b.schedules.intervals.begin[0]
-  //   ? 1
-  //   : b.schedules.intervals.begin[0] > a.schedules.intervals.begin[0]
-  //   ? -1
-  //   : 0
-  // );
-
-  // console.log("srted list ", srtedArr);
-
-  // console.log("sorted list ", conferences.conferences);
 
   return (
     <>
@@ -168,11 +139,34 @@ export default function Home({ conferences }) {
 
           {Object.entries(newD).map(([key, value]) => {
             return (
-              <tr>
+              <tr key={key}>
                 <td>{key}</td>
-                {value.map((con) => (
-                  <td>{con.name}</td>
-                ))}
+                {value.map((con, i) => {
+                  let isCon = Object.keys(con).length;
+                  return (
+                    <td key={i} className="text-[10px] px-3 font-bold">
+                      {isCon ? (
+                        <>
+                          <p>{con.startDate}</p>
+                          <div
+                            onClick={() => router.push(`/conference/${con.id}`)}
+                            className={`mt-2 cursor-pointer  border ${
+                              i % 2 != 0
+                                ? "bg-dark-blue/[.03] border-dark-blue text-dark-blue"
+                                : "bg-main-yellow/[.1] border-main-yellow text-dark-yellow"
+                            } rounded p-2 `}
+                          >
+                            {con.name}
+                            <p className=" text-[9px] font-normal">
+                              {con.schedules[0].intervals[0].begin} -{" "}
+                              {con.schedules[0].intervals[0].end}
+                            </p>
+                          </div>
+                        </>
+                      ) : null}
+                    </td>
+                  );
+                })}
               </tr>
             );
           })}
@@ -188,6 +182,7 @@ export async function getStaticProps() {
       query Conferences {
         conferences {
           name
+          id
           startDate
           endDate
           schedules {
