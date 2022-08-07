@@ -4,8 +4,12 @@ const Hero = () => {
     <div className="grid place-items-center px-[10%] mt-[150px]">
       <div className="flex flex-col items-start md:flex-row gap-8 md:items-center">
         {/* left */}
-        <div className="order-last md:order-first w-full  max-w-[250px] md:mt-40">
+        <div className="relative z-0 order-last md:order-first w-full  max-w-[250px] md:mt-40">
           <img src="/hero1.jpg" className="w-full rounded-[30px]" alt="hero1" />
+
+          <div className="absolute z-[-1] right-[-100px]  bottom-[-55px]">
+            <img src="/sphare.png" alt="star" />
+          </div>
         </div>
         {/* middle */}
 
