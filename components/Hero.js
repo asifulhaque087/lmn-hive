@@ -23,7 +23,7 @@ const Hero = () => {
                 <span className="xs:hidden sm:hidden md:inline invisible">
                   slkdfs
                 </span>
-                <div className="absolute bottom-[10px] left-[350px]  sm:bottom-[50%] sm:left-[25%] md:bottom-[55%] md:left-[50%]">
+                <div className="absolute bottom-[10%] right-[50%] xs:bottom-[10px] xs:right-[20%] leftt-[0]  sm:bottom-[50%] sm:left-[25%] md:bottom-[55%] md:left-[60%]">
                   <img src="../line.png" alt="" />
                 </div>
                 <div className="absolute right-[-250%]  top-0">
