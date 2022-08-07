@@ -50,7 +50,7 @@ export default function Home({ conferences }) {
       <Hero />
 
       {/* Table */}
-      {/* <Conferences newD={newD} /> */}
+      <Conferences newD={newD} />
     </>
   );
 }
