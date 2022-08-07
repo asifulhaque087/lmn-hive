@@ -20,13 +20,14 @@ const Conference = ({ conference }) => {
       id: "1",
       name: "organizer",
     },
+
     {
       id: "2",
-      name: "speakers",
+      name: "location",
     },
     {
       id: "3",
-      name: "location",
+      name: "speakers",
     },
     {
       id: "4",
