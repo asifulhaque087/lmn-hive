@@ -52,8 +52,15 @@ const Conference = ({ conference }) => {
   };
 
   return (
-    <div>
-      <div className="flex mt-40 gap-10 px-[10%]">
+    <div className="px-[10%] mt-52">
+      <div>
+        <h1 className="text-3xl font-bold mb-3">Conference info</h1>
+        <p className="text-xs  opacity-[0.6] mb-9">
+          Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id
+          fermentum.
+        </p>
+      </div>
+      <div className="flex gap-10 ">
         {/* left */}
         <div className="w-full md:w-[450px]">
           <DndContext

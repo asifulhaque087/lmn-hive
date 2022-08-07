@@ -1,7 +1,10 @@
+import { useRouter } from "next/router";
+
 const Conferences = ({ newD }) => {
+  const router = useRouter();
   return (
     <>
-      <div className=" w-full  px-[10%] mt-52">
+      <div className=" w-full  px-[10%] mt-52 mb-10">
         <div>
           <h1 className="text-3xl font-bold mb-3">Event Schedule</h1>
           <p className="text-xs  opacity-[0.6] mb-9">

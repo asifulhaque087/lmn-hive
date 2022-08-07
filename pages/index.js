@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { gql } from "@apollo/client";
 import client from "../graphql/client";
-import { useRouter } from "next/router";
 import Hero from "../components/Hero";
 import Conferences from "../components/Conferences";
 
@@ -25,7 +24,6 @@ const dateToday = (datt) => {
 
 export default function Home({ conferences }) {
   // console.log("fist list ", conferences);
-  const router = useRouter();
 
   let newD = {};
 
