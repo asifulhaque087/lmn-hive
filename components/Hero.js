@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="relative z-0 order-last md:order-first w-full  max-w-[250px] md:mt-40">
           <img src="/hero1.jpg" className="w-full rounded-[30px]" alt="hero1" />
 
-          <div className="absolute z-[-1] right-[-100px]  bottom-[-55px]">
+          <div className="hidden sm:block absolute z-[-1] right-[-100px]  bottom-[-55px]">
             <img src="/sphare.png" alt="star" />
           </div>
         </div>
@@ -16,12 +16,19 @@ const Hero = () => {
         <div className="relative flex flex-col gap-5 md:max-w-[330px]  bottom-24">
           <div className="mt-10 md:relative  md:left-[-50%] md:bottom-10   md:right-0">
             <div className=" text-[30px] sm:text-[48px] md:text-[88px] leading-[25px] sm:leading-[58px]  md:leading-[85px] text-[#0A142F] font-bold text-right sm:text-center">
-              <h1 className="xs:text-right sm:text-center">
+              <h1 className="relative big-rr xs:text-right sm:text-center">
                 <span className="sm:hidden md:inline invisible">slkdfs</span>
-                React
+                <span className="">React</span>
+                {/* React */}
                 <span className="xs:hidden sm:hidden md:inline invisible">
                   slkdfs
                 </span>
+                <div className="absolute bottom-[10px] left-[350px]  sm:bottom-[50%] sm:left-[25%] md:bottom-[55%] md:left-[50%]">
+                  <img src="../line.png" alt="" />
+                </div>
+                <div className="absolute right-[-250%]  top-0">
+                  <img src="../chabuk.png" alt="" />
+                </div>
               </h1>
               <h1 className="text-left xs:text-right sm:text-center">
                 Conference
