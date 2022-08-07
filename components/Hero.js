@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     // <div className="grid place-items-center px-[10%] mt-[20%]">
-    <div className="grid place-items-center px-[10%]">
+    <div className="grid place-items-center px-[10%] mt-[150px]">
       <div className="flex flex-col items-start md:flex-row gap-8 md:items-center">
         {/* left */}
         <div className="order-last md:order-first w-full  max-w-[250px] md:mt-40">
