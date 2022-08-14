@@ -15,24 +15,23 @@ const Hero = () => {
 
         <div className="relative flex flex-col gap-5 md:max-w-[330px]  bottom-24">
           <div className="mt-10 md:relative  md:left-[-50%] md:bottom-10   md:right-0">
-            <div className=" text-[30px] sm:text-[48px] md:text-[88px] leading-[25px] sm:leading-[58px]  md:leading-[85px] text-[#0A142F] font-bold text-right sm:text-center">
-              <h1 className="relative big-rr xs:text-right sm:text-center">
-                <span className="sm:hidden md:inline invisible">slkdfs</span>
-                <span className="">React</span>
-                {/* React */}
-                <span className="xs:hidden sm:hidden md:inline invisible">
-                  slkdfs
+            {/* <div className="text-[30px] sm:text-[48px] md:text-[88px] leading-[25px] sm:leading-[58px]  md:leading-[85px] text-[#0A142F] font-bold  bg-green-5000 min-w-fit"> */}
+
+            <div className="mTitle text-[30px] leading-[27px] xxs:text-[45px] xxs:leading-[42px] xs:text-[60px] xs:leading-[57px] sm:text-[88px] sm:leading-[85px] min-w-fit font-bold">
+              <h1 className="text-right">
+                <span className="relative inline-block">
+                  React
+                  <div className="absolute scale-50  bottom-[0%] left-[-60%] xxs:scale-[.6] xxs:bottom-[15%] xxs:left-[-43%] xs:transform-none xs:bottom-[60%] xs:left-[-40%] sm:bottom-[65%] sm:left-[-25%] md:scale-75 md:bottom-[65%] md:left-[-20%]">
+                    <img src="../line.png" alt="" />
+                  </div>
                 </span>
-                <div className="absolute bottom-[10%] right-[50%] xs:bottom-[10px] xs:right-[20%] leftt-[0]  sm:bottom-[50%] sm:left-[25%] md:bottom-[80%] md:left-[60%]">
-                  <img src="../line.png" alt="" />
-                </div>
-                <div className="absolute right-[-250%]  top-[-10%]">
+
+                {/* <div className="absolute right-[-250%]  top-[-10%]">
                   <img src="../chabuk.png" alt="" />
-                </div>
+                </div> */}
               </h1>
-              <h1 className="text-left xs:text-right sm:text-center">
-                Conference
-              </h1>
+
+              <h1 className="text-right">Conference</h1>
             </div>
           </div>
 
