@@ -5,12 +5,13 @@ export const Navigation = () => {
   const router = useRouter();
 
   return (
-    <div className="px-[10%] flex items-center">
+    <div className="px-[10%] flex items-center mt-5">
       {/* left */}
-      <div className="mb-2 cursor-pointer" onClick={() => router.push(`/`)}>
-        <h1 className="text-[40px] font-bold">
+      <div className="mb-2 cursor-pointer " onClick={() => router.push(`/`)}>
+        {/* <h1 className="text-[40px] font-bold">
           Rea<span className="text-main-yellow">c</span>t
-        </h1>
+        </h1> */}
+        <img src="./logo.png" width={90} alt="" />
       </div>
       {/* middle */}
       <div className="hidden md:flex items-center mx-auto gap-10 text-sm font-medium cursor-pointer">
